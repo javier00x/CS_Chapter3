@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CheckLowAndHighRate
+namespace EnsureValidPayRate
 {
     class Program
     {
@@ -14,9 +14,14 @@ namespace CheckLowAndHighRate
 
             if (rate > 49.99)
             {
-                Console.WriteLine("ERROR!");
+                Console.WriteLine("ERROR! please re-enter your desired pay rate");
+                Console.Write("Enter your pay rate here: ");
+                rate = Convert.ToDouble(Console.ReadLine());
+
+                if (rate > 49.99)
+
             }
-               
+
             if (rate < 5.65)
             {
                 Console.WriteLine("ERROR!");
@@ -31,7 +36,6 @@ namespace CheckLowAndHighRate
             {
                 // In range
             }
-
         }
     }
 }
